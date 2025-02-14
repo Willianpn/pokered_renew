@@ -2,7 +2,7 @@
 ; they are texts
 
 ViridianMartClerkText::
-	script_mart GREAT_BALL, ANTIDOTE, EXP_ALL;PARLYZ_HEAL
+	script_mart GREAT_BALL, ANTIDOTE, PARLYZ_HEAL;EXP_ALL;PARLYZ_HEAL
 
 PewterMartClerkText::
 	script_mart GREAT_BALL, POTION, ESCAPE_ROPE, ANTIDOTE, REPEL, AWAKENING, PARLYZ_HEAL

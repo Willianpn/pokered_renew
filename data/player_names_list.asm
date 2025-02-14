@@ -1,9 +1,16 @@
 IF DEF(_RED)
 DefaultNamesPlayerList:
 	db "NEW NAME@"
-	db "DIEGO@"
-	db "ASH@"
-	db "JACK@"
+	db "RED@@"
+	db "GARY@"
+	db "JOHN@"
+
+DefaultNamesGirlList:
+   	db "NEW NAME@"
+  	db "GREEN@"
+  	db "LEAF@"
+   	db "KRIS@"
+
 
 DefaultNamesRivalList:
 	db "NEW NAME@"
@@ -18,6 +25,13 @@ DefaultNamesPlayerList:
 	db "BLUE@"
 	db "GARY@"
 	db "JOHN@"
+
+DefaultNamesGirlList:
+   	db "NEW NAME@"
+  	db "GREEN@"
+  	db "LEAF@"
+   	db "KRIS@"
+
 
 DefaultNamesRivalList:
 	db "NEW NAME@"

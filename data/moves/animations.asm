@@ -164,6 +164,12 @@ AttackAnimationPointers:
 	dw SuperFangAnim
 	dw SlashAnim
 	dw SubstituteAnim
+	dw DracoVortexAnim
+	dw SandTombAnim
+	dw StoneEdgeAnim
+	dw ShadowClawAnim
+	dw SpiritFlameAnim
+	dw VenomPincerAnim
 	dw StruggleAnim
 	assert_table_length NUM_ATTACKS
 	dw ShowPicAnim
@@ -403,6 +409,12 @@ WrapAnim:
 	battle_anim WRAP, SUBANIM_0_BIND, 0, 4
 	db -1 ; end
 
+SandTombAnim:
+	battle_anim WRAP, SUBANIM_0_BIND, 0, 4
+	battle_anim WRAP, SUBANIM_0_BIND, 0, 4
+	battle_anim WRAP, SUBANIM_0_BIND, 0, 4
+	db -1 ; end
+
 TakeDownAnim:
 	battle_anim LEECH_SEED, SE_MOVE_MON_HORIZONTALLY
 	battle_anim TAKE_DOWN, SE_DARK_SCREEN_FLASH
@@ -435,7 +447,11 @@ TailWhipAnim:
 PoisonStingAnim:
 	battle_anim POISON_STING, SUBANIM_0_STAR, 0, 6
 	db -1 ; end
-
+	
+VenomPincerAnim:
+	battle_anim POISON_STING, SUBANIM_0_STAR, 0, 6
+	db -1 ; end
+	
 TwineedleAnim:
 	battle_anim TWINEEDLE, SUBANIM_0_STAR_TWICE, 0, 5
 	battle_anim TWINEEDLE, SUBANIM_0_STAR_TWICE, 0, 5
@@ -500,6 +516,12 @@ EmberAnim:
 	db -1 ; end
 
 FlamethrowerAnim:
+	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_BEAM, 1, 6
+	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_COLUMN_1, 1, 6
+	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_COLUMN_2, 1, 6
+	db -1 ; end
+	
+SpiritFlameAnim:
 	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_BEAM, 1, 6
 	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_COLUMN_1, 1, 6
 	battle_anim FLAMETHROWER, SUBANIM_1_FLAME_COLUMN_2, 1, 6
@@ -606,6 +628,13 @@ StrengthAnim:
 	battle_anim FIRE_PUNCH, SUBANIM_1_STAR_BIG_MOVING, 1, 6
 	db -1 ; end
 
+StoneEdgeAnim:
+	battle_anim LEECH_SEED, SE_MOVE_MON_HORIZONTALLY
+	battle_anim NO_MOVE, SE_RESET_MON_POSITION
+	battle_anim FIRE_PUNCH, SUBANIM_1_STAR_BIG_MOVING, 1, 6
+	db -1 ; end
+
+
 AbsorbAnim:
 	battle_anim ABSORB, SE_LIGHT_SCREEN_PALETTE
 	battle_anim NO_MOVE, SUBANIM_0_CIRCLES_1_SQUARES_CENTERING_ENEMY, 0, 6
@@ -667,6 +696,13 @@ StringShotAnim:
 	db -1 ; end
 
 DragonRageAnim:
+	battle_anim DRAGON_RAGE, SUBANIM_1_FLAME_BEAM, 1, 6
+	battle_anim NO_MOVE, SUBANIM_1_FLAME_COLUMN_1, 1, 6
+	battle_anim NO_MOVE, SUBANIM_1_FLAME_COLUMN_2, 1, 6
+	battle_anim NO_MOVE, SUBANIM_1_FLAME_COLUMN_3, 1, 6
+	db -1 ; end
+
+DracoVortexAnim:
 	battle_anim DRAGON_RAGE, SUBANIM_1_FLAME_BEAM, 1, 6
 	battle_anim NO_MOVE, SUBANIM_1_FLAME_COLUMN_1, 1, 6
 	battle_anim NO_MOVE, SUBANIM_1_FLAME_COLUMN_2, 1, 6
@@ -1134,6 +1170,10 @@ SuperFangAnim:
 	db -1 ; end
 
 SlashAnim:
+	battle_anim SLASH, SUBANIM_0_SCRATCHES, 0, 6
+	db -1 ; end
+	
+ShadowClawAnim:
 	battle_anim SLASH, SUBANIM_0_SCRATCHES, 0, 6
 	db -1 ; end
 

@@ -165,6 +165,12 @@ MoveSoundTable:
 	db SFX_BATTLE_26,          $f0, $ff ; SUPER_FANG
 	db SFX_NOT_VERY_EFFECTIVE, $01, $ff ; SLASH
 	db SFX_BATTLE_2C,          $d8, $04 ; SUBSTITUTE
+	db SFX_BATTLE_29,          $f0, $80 ; DRACO_VORTEX usa o DRAGON_RAGE
+	db SFX_BATTLE_14,          $10, $60 ; SAND_TOMB usa o WRAP
+	db SFX_BATTLE_26,          $20, $40 ; STONE EDGE usa o STRENGTH
+	db SFX_NOT_VERY_EFFECTIVE, $01, $ff ; SHADOW_CLAW usa o SLASH
+	db SFX_BATTLE_19,          $21, $e0 ; SPIRIT_FLAME usa FLAMETHROWER
+	db SFX_BATTLE_1B,          $00, $80 ; VENOM_PINCER usa POISON_STING
 	db SFX_BATTLE_0B,          $00, $80 ; STRUGGLE
 	assert_table_length NUM_ATTACKS
 	db SFX_BATTLE_0B,          $00, $80

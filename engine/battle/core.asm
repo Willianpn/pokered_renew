@@ -6357,14 +6357,30 @@ SwapPlayerAndEnemyLevels:
 LoadPlayerBackPic:
 	ld a, [wBattleType]
 	dec a ; is it the old man tutorial?
-	ld de, RedPicBack
-	jr nz, .next
-	ld de, OldManPicBack
+	;ld de, RedPicBack
+	;jr nz, .next
+	;ld de, OldManPicBack
+;.next
+;	ld a, BANK(RedPicBack)
+	;ASSERT BANK(RedPicBack) == BANK(OldManPicBack)
+	ld de, OldManPicBack   ; Load the old man back sprite preemptively
+    ld a, BANK(RedPicBack) ; Default Red back sprite will be used as a means to load in the Old Man back sprite
+   	jr z, .next
+   	ld a, [wPlayerGender]
+   	and a
+   	jr z, .RedBack
+   	ld de, GreenPicBack
+    ld a, BANK(GreenPicBack) ; Load female back sprite
+   	jr .next
+.RedBack
+   	ld de, RedPicBack ; Load default Red back sprite
+    ld a, BANK(RedPicBack)
 .next
-	ld a, BANK(RedPicBack)
-	ASSERT BANK(RedPicBack) == BANK(OldManPicBack)
+    ASSERT BANK(GreenPicBack) == BANK(OldManPicBack) ; These two ASSERTs make sure to cover
+    ASSERT BANK(RedPicBack) == BANK(OldManPicBack)   ; both sprite cases se precisar apaga até aqui
 	call UncompressSpriteFromDE
 	predef ScaleSpriteByTwo
+	;call LoadBackSpriteUnzoomed ;mexer em caso de erro
 	ld hl, wShadowOAM
 	xor a
 	ldh [hOAMTile], a ; initial tile number
@@ -7069,10 +7085,12 @@ LoadMonBackPic:
 	call UncompressMonSprite
 	predef ScaleSpriteByTwo
 	ld de, vBackPic
-	call InterlaceMergeSpriteBuffers ; combine the two buffers to a single 2bpp sprite
+	call InterlaceMergeSpriteBuffers ; combine the two buffers to a single 2bpp sprite ;mexer caso
+	;call LoadBackSpriteUnzoomed
 	ld hl, vSprites
 	ld de, vBackPic
 	ld c, (2 * SPRITEBUFFERSIZE) / 16 ; count of 16-byte chunks to be copied
 	ldh a, [hLoadedROMBank]
 	ld b, a
 	jp CopyVideoData
+

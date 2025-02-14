@@ -209,7 +209,7 @@ RhydonEvosMoves:
 	db 15, ROCK_THROW    ; Mantido
 	db 22, STOMP         ; Mantido	
 	db 35, TAIL_WHIP     ; Mantido
-	db 40, FURY_ATTACK   ; Mantido
+	db 40, STONE_EDGE   ; Mantido
 	db 45, EARTHQUAKE    ; Mantido
 	db 48, HORN_DRILL    ; Mantido
 	db 55, ICE_PUNCH     ; Nova cobertura	
@@ -322,7 +322,14 @@ ExeggutorEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 28, STOMP
+	db 28, STOMP            ; Ataque físico, temática de "cabeças"
+	db 32, PSYBEAM          ; Ataque Psíquico básico
+	db 36, EGG_BOMB         ; Ataque poderoso, temática de "ovos"
+	db 40, HYPNOSIS         ; Coloca o oponente para dormir
+	db 44, LEECH_SEED       ; Drena HP do oponente
+	db 48, PSYCHIC_M          ; Ataque Psíquico poderoso
+	db 52, SOLARBEAM        ; Ataque de Grama poderoso
+	db 56, DOUBLE_EDGE      ; Ataque físico de alto dano
 	db 0
 
 LickitungEvosMoves:
@@ -333,7 +340,7 @@ LickitungEvosMoves:
 	db 15, DISABLE
 	db 23, DEFENSE_CURL
 	db 31, SLAM
-	db 39, SCREECH
+	db 39, BODY_SLAM
 	db 0
 
 ExeggcuteEvosMoves:
@@ -341,12 +348,14 @@ ExeggcuteEvosMoves:
 	db EVOLVE_ITEM, LEAF_STONE, 1, EXEGGUTOR
 	db 0
 ; Learnset
-	db 25, REFLECT
-	db 28, LEECH_SEED
-	db 32, STUN_SPORE
-	db 37, POISONPOWDER
-	db 42, SOLARBEAM
-	db 48, SLEEP_POWDER
+	db 10, BARRAGE          ; Ataque básico, temática de "ovos"
+	db 15, HYPNOSIS         ; Coloca o oponente para dormir
+	db 20, LEECH_SEED       ; Drena HP do oponente
+	db 25, REFLECT          ; Aumenta a defesa do time
+	db 30, STUN_SPORE       ; Paralisa o oponente
+	db 35, POISONPOWDER     ; Envenena o oponente
+	db 40, SOLARBEAM        ; Ataque poderoso de Grama
+	db 45, SLEEP_POWDER     ; Alternativa para Hypnosis
 	db 0
 
 GrimerEvosMoves:
@@ -371,7 +380,8 @@ GengarEvosMoves:
 	db 26, NIGHT_SHADE  ; Adicionado ataque Ghost baseado no nível
 	db 29, HYPNOSIS
 	db 35, CONFUSE_RAY  ; Novo ataque para causar confusão
-	db 42, DREAM_EATER  ; Ajustado para encaixar melhor na progressão
+	db 42, DREAM_EATER  ; Ajustado para encaixar melhor na progressão SPIRIT_FLAME
+	db 50, SPIRIT_FLAME
 	db 0
 
 
@@ -442,12 +452,15 @@ ArcanineEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 30, EMBER         ; Acesso a um golpe de fogo cedo
-	db 35, BITE          ; Dano sólido + chance de flinch
-	db 42, AGILITY       ; Aumenta a Speed, útil para varrer oponentes
-	db 50, FLAMETHROWER  ; Forte STAB, dano consistente
-	db 55, TAKE_DOWN     ; Golpe físico poderoso, combina bem com seu Attack
-	db 60, FIRE_BLAST    ; STAB devastador, chance de burn
+	db 20, EMBER          ; Ataque de Fogo básico
+	db 25, BITE           ; Ataque físico com chance de flinch
+	db 30, DIG            ; Novo ataque de Terrestre, ótimo para cobertura
+	db 35, AGILITY        ; Aumenta a Speed, útil para varrer oponentes
+	db 40, FLAMETHROWER   ; STAB de Fogo poderoso e confiável
+	db 45, TAKE_DOWN      ; Ataque físico forte, com dano de recuo
+	db 50, EARTHQUAKE     ; STAB de Terrestre, devastador contra tipos Elétrico e Pedra
+	db 55, FIRE_BLAST     ; STAB de Fogo poderoso, com chance de burn
+	db 60, DOUBLE_EDGE    ; Ataque físico poderoso, com dano de recuo
 	db 0
 
 
@@ -600,9 +613,10 @@ OnixEvosMoves:
 ; Learnset
 	db 15, BIND
 	db 19, ROCK_THROW
-	db 25, RAGE
+	db 25, HARDEN
 	db 33, SLAM
-	db 43, HARDEN
+	db 43, SAND_TOMB
+	db 48, STONE_EDGE
 	db 0
 
 FearowEvosMoves:
@@ -664,6 +678,7 @@ GravelerEvosMoves:
 	db 11, DEFENSE_CURL
 	db 16, ROCK_THROW
 	db 21, SELFDESTRUCT
+	db 26, SAND_TOMB
 	db 29, HARDEN
 	db 36, EARTHQUAKE
 	db 43, EXPLOSION
@@ -734,6 +749,7 @@ ArbokEvosMoves:
 	db 17, BITE
 	db 27, GLARE
 	db 36, SCREECH
+	db 42, VENOM_PINCER
 	db 47, ACID
 	db 0
 
@@ -782,6 +798,7 @@ GolemEvosMoves:
 	db 21, SELFDESTRUCT
 	db 29, HARDEN
 	db 36, EARTHQUAKE
+	db 40, SAND_TOMB
 	db 43, EXPLOSION
 	db 0
 
@@ -841,7 +858,7 @@ KoffingEvosMoves:
 	db 32, SLUDGE
 	db 37, SMOKESCREEN
 	db 40, SELFDESTRUCT
-	db 45, HAZE
+	db 45, VENOM_PINCER
 	db 48, EXPLOSION
 	db 0
 
@@ -893,8 +910,8 @@ TaurosEvosMoves:
 ; Learnset
 	db 21, STOMP
 	db 28, TAIL_WHIP
-	db 35, LEER
-	db 44, RAGE
+	db 35, BODY_SLAM
+	db 40, EARTHQUAKE
 	db 51, TAKE_DOWN
 	db 0
 
@@ -920,6 +937,7 @@ FarfetchdEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
+	db 4, GUST
 	db 7, LEER
 	db 15, FURY_ATTACK
 	db 23, SLASH       ; Novo (STAB físico)
@@ -948,6 +966,7 @@ DragoniteEvosMoves:
 	db 20, AGILITY
 	db 35, SLAM
 	db 45, DRAGON_RAGE
+	db 56, DRACO_VORTEX
 	db 60, HYPER_BEAM
 	db 0
 
@@ -974,6 +993,7 @@ DoduoEvosMoves:
 	db EVOLVE_LEVEL, 31, DODRIO
 	db 0
 ; Learnset
+	db 4, GUST
 	db 20, GROWL
 	db 24, FURY_ATTACK
 	db 30, DRILL_PECK
@@ -999,12 +1019,12 @@ JynxEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
-	db 18, LICK
-	db 23, DOUBLESLAP
+	db 18, CONFUSION
+	db 23, NIGHT_SHADE
 	db 31, ICE_PUNCH
 	db 39, BODY_SLAM
-	db 47, THRASH
-	db 58, BLIZZARD
+	db 47, SHADOW_CLAW
+	db 55, BLIZZARD
 	db 0
 
 MoltresEvosMoves:
@@ -1057,6 +1077,7 @@ KrabbyEvosMoves:
 	db EVOLVE_LEVEL, 28, KINGLER
 	db 0
 ; Learnset
+	db 4, WATER_GUN
 	db 20, VICEGRIP
 	db 25, GUILLOTINE
 	db 30, STOMP
@@ -1091,6 +1112,7 @@ VulpixEvosMoves:
 	db 21, ROAR
 	db 28, CONFUSE_RAY
 	db 35, FLAMETHROWER
+	db 40, SPIRIT_FLAME
 	db 42, FIRE_SPIN
 	db 0
 
@@ -1139,6 +1161,7 @@ DratiniEvosMoves:
 	db 20, AGILITY
 	db 30, SLAM
 	db 40, DRAGON_RAGE
+	db 42, DRACO_VORTEX
 	db 50, HYPER_BEAM
 	db 0
 
@@ -1151,6 +1174,7 @@ DragonairEvosMoves:
 	db 20, AGILITY
 	db 35, SLAM
 	db 45, DRAGON_RAGE
+	db 45, DRACO_VORTEX 
 	db 55, HYPER_BEAM
 	db 0
 
@@ -1162,7 +1186,7 @@ KabutoEvosMoves:
 	db 34, ABSORB
 	db 39, SLASH
 	db 42, ROCK_THROW
-	db 44, LEER
+	db 44, SAND_TOMB
 	db 49, HYDRO_PUMP
 	db 0
 
@@ -1173,7 +1197,7 @@ KabutopsEvosMoves:
 	db 34, ABSORB
 	db 39, SLASH
 	db 42, ROCK_THROW
-	db 46, LEER
+	db 46, SAND_TOMB
 	db 53, HYDRO_PUMP
 	db 0
 
@@ -1242,7 +1266,7 @@ OmanyteEvosMoves:
 ; Learnset
 	db 34, HORN_ATTACK
 	db 39, LEER
-	db 40, ROCK_THROW
+	db 40, STONE_EDGE
 	db 46, SPIKE_CANNON
 	db 53, HYDRO_PUMP
 	db 0
@@ -1253,7 +1277,7 @@ OmastarEvosMoves:
 ; Learnset
 	db 34, HORN_ATTACK
 	db 39, LEER
-	db 42, ROCK_THROW
+	db 42, STONE_EDGE
 	db 44, SPIKE_CANNON
 	db 49, HYDRO_PUMP
 	db 0
@@ -1309,7 +1333,7 @@ FlareonEvosMoves:
 	db 40, BITE
 	db 42, FLAMETHROWER
 	db 44, FIRE_SPIN
-	db 48, RAGE
+	db 48, SLASH
 	db 0
 
 JolteonEvosMoves:
@@ -1357,6 +1381,7 @@ ZubatEvosMoves:
 	db EVOLVE_LEVEL, 22, GOLBAT
 	db 0
 ; Learnset
+	db 4, GUST
 	db 10, SUPERSONIC
 	db 15, BITE
 	db 21, CONFUSE_RAY
@@ -1374,6 +1399,7 @@ EkansEvosMoves:
 	db 24, GLARE
 	db 31, SCREECH
 	db 38, ACID
+	db 44, VENOM_PINCER
 	db 0
 
 ParasEvosMoves:
@@ -1491,9 +1517,9 @@ VenomothEvosMoves:
 	db 24, POISONPOWDER
 	db 27, LEECH_LIFE
 	db 30, STUN_SPORE
-	db 38, PSYBEAM
-	db 43, SLEEP_POWDER
-	db 50, PSYCHIC_M
+	db 34, PSYBEAM
+	db 40, SLEEP_POWDER
+	db 46, PSYCHIC_M
 	db 0
 
 DewgongEvosMoves:
@@ -1553,7 +1579,7 @@ MachampEvosMoves:
 	db 0
 ; Learnset
 	db 20, LOW_KICK
-	db 25, LEER
+	db 25, SAND_TOMB
 	db 36, FOCUS_ENERGY
 	db 44, SEISMIC_TOSS
 	db 52, SUBMISSION
@@ -1648,7 +1674,7 @@ MukEvosMoves:
 	db 30, POISON_GAS
 	db 33, MINIMIZE
 	db 37, SLUDGE
-	db 45, HARDEN
+	db 42, VENOM_PINCER
 	db 50, ACID_ARMOR  ; Trazido um pouco mais cedo
 	db 55, SCREECH
 	db 0
@@ -1737,7 +1763,7 @@ MarowakEvosMoves:
 	db 25, LEER
 	db 33, FOCUS_ENERGY
 	db 41, THRASH
-	db 45, ROCK_SLIDE  ; Novo ataque para cobertura contra voadores
+	db 45, SHADOW_CLAW  ; Novo ataque para cobertura contra voadores
 	db 48, BONEMERANG
 	db 50, EARTHQUAKE  ; Novo ataque Ground forte no final do jogo
 	db 0
@@ -1757,6 +1783,7 @@ HaunterEvosMoves:
 	db 20, LICK         ; Novo ataque Ghost adicionado cedo
 	db 26, NIGHT_SHADE  ; Adicionado ataque Ghost baseado no nível
 	db 29, HYPNOSIS
+	db 32, SHADOW_CLAW  ; Novo ataque para causar confusão antes da evolução
 	db 35, CONFUSE_RAY  ; Novo ataque para causar confusão antes da evolução
 	db 42, DREAM_EATER  ; Ajustado para encaixar melhor na progressão
 	db 0

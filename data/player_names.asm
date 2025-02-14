@@ -1,9 +1,16 @@
 IF DEF(_RED)
 DefaultNamesPlayer:
 	db   "NEW NAME"
-	next "DIEGO"
+	next "RED"
 	next "ASH"
 	next "JACK"
+	db   "@"
+
+DefaultNamesGirl:
+	db   "NEW NAME"
+   	next "GREEN"
+    next "LEAF"
+	next "KRIS"
 	db   "@"
 
 DefaultNamesRival:
@@ -20,6 +27,13 @@ DefaultNamesPlayer:
 	next "BLUE"
 	next "GARY"
 	next "JOHN"
+	db   "@"
+	
+DefaultNamesGirl:
+	db   "NEW NAME"
+   	next "GREEN"
+    next "LEAF"
+	next "KRIS"
 	db   "@"
 
 DefaultNamesRival:

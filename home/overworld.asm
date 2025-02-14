@@ -283,7 +283,22 @@ OverworldLoopLessDelay::
 	bit BIT_LEDGE_OR_FISHING, a
 	jr nz, .normalPlayerSpriteAdvancement
 	call DoBikeSpeedup
+	call DoBikeSpeedup;running shoes
+	call DoBikeSpeedup;running shoes
+	jr .notRunning;running shoes
 .normalPlayerSpriteAdvancement
+	; surf at 2x walking speed
+	ld a, [wWalkBikeSurfState] ;running shoes
+	cp $02 ;running shoes
+	jr z, .surfFaster ;running shoes
+	; Holding B makes you run at 2x walking speed
+	ld a, [hJoyHeld] ;running shoes
+	and B_BUTTON ;running shoes
+	jr z, .notRunning ;running shoes
+.surfFaster ;running shoes
+	call DoBikeSpeedup ;running shoes
+.notRunning
+	;original .normalPlayerSpriteAdvancement continues here
 	call AdvancePlayerSprite
 	ld a, [wWalkCounter]
 	and a
@@ -1973,8 +1988,15 @@ RunMapScript::
 
 LoadWalkingPlayerSpriteGraphics::
 	ld de, RedSprite
-	ld hl, vNPCSprites
-	jr LoadPlayerSpriteGraphicsCommon
+	;ld hl, vNPCSprites
+	;jr LoadPlayerSpriteGraphicsCommon
+    ld a, [wPlayerGender]
+	and a
+    jr z, .AreGuy1
+    ld de, GreenSprite
+.AreGuy1
+    ld hl,vNPCSprites
+    jr LoadPlayerSpriteGraphicsCommon
 
 LoadSurfingPlayerSpriteGraphics::
 	ld de, SeelSprite
@@ -1983,7 +2005,13 @@ LoadSurfingPlayerSpriteGraphics::
 
 LoadBikePlayerSpriteGraphics::
 	ld de, RedBikeSprite
-	ld hl, vNPCSprites
+	;ld hl, vNPCSprites
+	ld a, [wPlayerGender]
+   	and a
+   	jr z, .AreGuy2
+   	ld de, GreenBikeSprite
+.AreGuy2
+    ld hl, vNPCSprites
 
 LoadPlayerSpriteGraphicsCommon::
 	push de

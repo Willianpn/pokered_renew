@@ -164,5 +164,11 @@ MoveNames::
 	li "SUPER FANG"
 	li "SLASH"
 	li "SUBSTITUTE"
+	li "VORTEX"
+	li "SAND TOMB"
+	li "STONE EDGE"
+	li "SHADOW CLAW"
+	li "SPIRIT FLAME"
+	li "VENOM PINCER"
 	li "STRUGGLE"
 	assert_list_length NUM_ATTACKS

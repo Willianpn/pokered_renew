@@ -310,6 +310,7 @@ INCLUDE "engine/battle/decrement_pp.asm"
 INCLUDE "gfx/version.asm"
 
 
+
 SECTION "bank1C", ROMX
 
 INCLUDE "engine/movie/splash.asm"
@@ -343,18 +344,22 @@ INCLUDE "engine/menus/league_pc.asm"
 INCLUDE "engine/events/hidden_items.asm"
 
 
+; SECTION "bank1E", ROMX (original)
 SECTION "bank1E", ROMX
+INCLUDE "engine/battle/animations.asm"       ; Mantido (core para batalhas)
+INCLUDE "gfx/fishing.asm"                    ; Mantido (gráficos específicos)
+INCLUDE "data/moves/animations.asm"          ; Mantido (dados de animação essenciais)
+INCLUDE "data/battle_anims/subanimations.asm"; Mantido (subanimações)
+INCLUDE "data/battle_anims/frame_blocks.asm" ; Mantido (frames de animação)
+INCLUDE "engine/movie/evolution.asm"         ; Mantido (lógica de evolução)
 
-INCLUDE "engine/battle/animations.asm"
-INCLUDE "engine/overworld/cut2.asm"
-INCLUDE "engine/overworld/dust_smoke.asm"
-INCLUDE "gfx/fishing.asm"
-INCLUDE "data/moves/animations.asm"
-INCLUDE "data/battle_anims/subanimations.asm"
-INCLUDE "data/battle_anims/frame_blocks.asm"
-INCLUDE "engine/movie/evolution.asm"
-INCLUDE "engine/overworld/elevator.asm"
-INCLUDE "engine/items/tm_prices.asm"
+; SECTION "bank2E", ROMX (novo banco)
+SECTION "bank2E", ROMX
+INCLUDE "engine/overworld/cut2.asm"          ; Movido (lógica de "Cortar")
+INCLUDE "engine/overworld/dust_smoke.asm"    ; Movido (partículas de poeira)
+INCLUDE "engine/overworld/elevator.asm"      ; Movido (lógica de elevadores)
+INCLUDE "engine/items/tm_prices.asm"         ; Movido (preços de TMs)
+
 
 SECTION "Engine Spillover", ROMX
 

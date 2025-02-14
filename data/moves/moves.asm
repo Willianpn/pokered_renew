@@ -175,5 +175,11 @@ Moves:
 	move SUPER_FANG,   SUPER_FANG_EFFECT,            1, NORMAL,        90, 10
 	move SLASH,        NO_ADDITIONAL_EFFECT,        70, NORMAL,       100, 20
 	move SUBSTITUTE,   SUBSTITUTE_EFFECT,            0, NORMAL,       100, 10
+	move DRACO_VORTEX, DEFENSE_DOWN_SIDE_EFFECT,   	80, DRAGON,    	  100, 15  ; +10% de defesa do alvo  
+	move SAND_TOMB,    TRAPPING_EFFECT,         	25, ROCK,          85, 15  ; Dano residual como Fire Spin
+	move STONE_EDGE,   NO_ADDITIONAL_EFFECT,   	   100, ROCK,         100,  5  ;
+	move SHADOW_CLAW,  FLINCH_SIDE_EFFECT1,    		80, GHOST,    	  100, 15  ;
+	move SPIRIT_FLAME, BURN_SIDE_EFFECT1,         	85, GHOST,    	  100, 15  ; Recupera 50% do dano 
+	move VENOM_PINCER, POISON_SIDE_EFFECT2,     	90, POISON,       100, 10  
 	move STRUGGLE,     RECOIL_EFFECT,               50, NORMAL,       100, 10
 	assert_table_length NUM_ATTACKS

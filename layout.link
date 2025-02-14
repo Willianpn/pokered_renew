@@ -49,7 +49,7 @@ ROMX $4
 	"Battle Engine 1"
 ROMX $5
 	"NPC Sprites 2"
-	"Battle Engine 2"
+	;"Battle Engine 2"
 ROMX $6
 	"Maps 1"
 	"Play Time"
@@ -177,9 +177,11 @@ ROMX $2A
 	"Text 11"
 ROMX $2B
 	"Pokédex Text"
+	"bank2E" ;teste
 ROMX $2C
 	"Move Names"
 	"Slot Machines" ;movi para cá, acho que isso é melhor do que comentar o bank1E
+	"Battle Engine 2"
 WRAM0
 	"Audio RAM"
 	org $c100
